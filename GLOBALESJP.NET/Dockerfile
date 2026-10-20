@@ -1,30 +1,42 @@
-# Consulte https://aka.ms/customizecontainer para aprender a personalizar su contenedor de depuración y cómo Visual Studio usa este Dockerfile para compilar sus imágenes para una depuración más rápida.
+# =========================================================================
+# GLOBALES JP | Servicios TI & Software
+# Production Dockerfile para Render & Entornos de Contenedores
+# Target Framework: ASP.NET Core MVC (.NET 10.0)
+# =========================================================================
 
-# Esta fase se usa cuando se ejecuta desde VS en modo rápido (valor predeterminado para la configuración de depuración)
+# --- Fase 1: Base Runtime ---
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
 USER $APP_UID
 WORKDIR /app
+
+# Puerto dinámico: Render inyecta la variable de entorno $PORT en tiempo de ejecución.
+# Establecemos 8080 como valor predeterminado compatible con .NET 8/10.
+ENV PORT=8080
+ENV ASPNETCORE_HTTP_PORTS=8080
 EXPOSE 8080
-EXPOSE 8081
 
-
-# Esta fase se usa para compilar el proyecto de servicio
+# --- Fase 2: Build SDK ---
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["GLOBALESJP.NET/GLOBALESJP.NET.csproj", "GLOBALESJP.NET/"]
-RUN dotnet restore "./GLOBALESJP.NET/GLOBALESJP.NET.csproj"
+
+# 1. Copiar primero el archivo de proyecto para optimizar la caché de capas de Docker
+COPY ["GLOBALESJP.NET.csproj", "./"]
+RUN dotnet restore "./GLOBALESJP.NET.csproj"
+
+# 2. Copiar el código fuente completo del proyecto
 COPY . .
-WORKDIR "/src/GLOBALESJP.NET"
 RUN dotnet build "./GLOBALESJP.NET.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# Esta fase se usa para publicar el proyecto de servicio que se copiará en la fase final.
+# --- Fase 3: Publish ---
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./GLOBALESJP.NET.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# Esta fase se usa en producción o cuando se ejecuta desde VS en modo normal (valor predeterminado cuando no se usa la configuración de depuración)
+# --- Fase 4: Imagen Final de Producción ---
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+# Entrypoint apuntando a la DLL final de la aplicación
 ENTRYPOINT ["dotnet", "GLOBALESJP.NET.dll"]
