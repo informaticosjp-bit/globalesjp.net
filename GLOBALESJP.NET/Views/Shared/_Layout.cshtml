@@ -3,7 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GLOBALES JP | Servicios TI &amp; Software</title>
+    <title>@(ViewData["Title"] ?? "GLOBALESJP.NET | SERVICIOS TI")</title>
+    
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/logo-jp.png" asp-append-version="true" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/logo-jp.png" asp-append-version="true" />
+    <link rel="shortcut icon" href="~/favicon.ico" asp-append-version="true" />
+    <link rel="apple-touch-icon" href="~/images/logo-jp.png" asp-append-version="true" />
     
     <meta name="description" content="GLOBALES JP - Soluciones de Software a Medida, Dominios y Cloudflare, Google Workspace, Soluciones Gemini AI y Diagnósticos Técnicos Remotos Empresariales." />
     <meta name="keywords" content="Globales JP, Servicios TI, Desarrollo Web, Aplicaciones a Medida, Cloudflare, Dominios, DNS, Google Workspace, Gemini AI, Diagnósticos Remotos, Software Empresarial, ERP, Cursos" />
