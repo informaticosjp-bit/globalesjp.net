@@ -48,7 +48,7 @@
     <!-- Navigation Header -->
     <header>
         <nav class="navbar navbar-expand-lg jp-navbar">
-            <div class="container">
+            <div class="container-fluid px-2 px-sm-3 px-xl-4 px-xxl-5 jp-nav-container">
                 <a class="navbar-brand-wrapper" asp-controller="Home" asp-action="Index">
                     <img src="~/images/logo-jp.png" alt="GLOBALES JP Logo" class="brand-logo-img" />
                     <div>
@@ -83,7 +83,7 @@
                         </li>
                     </ul>
 
-                    <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+                    <div class="d-flex align-items-center gap-1 gap-xl-2 mt-3 mt-lg-0 jp-nav-actions flex-nowrap">
                         <!-- Theme Toggle Button (Dark / Light) -->
                         <button id="themeToggleBtn" type="button" class="btn-jp-theme-toggle" title="Cambiar a Modo Claro" aria-label="Cambiar tema">
                             <i class="bi bi-sun-fill" id="themeIcon"></i>
@@ -91,12 +91,14 @@
                         <!-- ERP Online Button (Acceso Directo al Sistema) -->
                         <a href="https://erp.globalesjp.net/" target="_blank" rel="noopener noreferrer" class="btn btn-jp-erp btn-sm-custom" title="Ingresar a GLOBALES JP | ERP">
                             <i class="bi bi-grid-3x3-gap-fill text-warning"></i>
-                            <span>ERP Online</span>
+                            <span class="d-none d-xxl-inline">ERP Online</span>
+                            <span class="d-inline d-xxl-none">ERP</span>
                         </a>
                         <!-- Cursos Online Button -->
                         <a href="https://cursos.globalesjp.net/" target="_blank" rel="noopener noreferrer" class="btn btn-jp-outline btn-sm-custom" title="Campus Virtual Cursos Globales JP">
                             <i class="bi bi-mortarboard-fill text-info"></i>
-                            <span>Cursos Online</span>
+                            <span class="d-none d-xxl-inline">Cursos Online</span>
+                            <span class="d-inline d-xxl-none">Cursos</span>
                         </a>
                         <!-- WhatsApp Direct -->
                         <a href="https://wa.me/584142241795?text=Hola%20Globales%20JP,%20deseo%20consultar%20sobre%20sus%20servicios%20de%20Software%20y%20TI" target="_blank" rel="noopener noreferrer" class="btn btn-jp-whatsapp btn-sm-custom">
