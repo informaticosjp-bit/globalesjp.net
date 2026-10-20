@@ -1,0 +1,876 @@
+@model GLOBALESJP.NET.Models.ContactViewModel
+@{
+    ViewData["Title"] = "Servicios TI, Desarrollo Web, Cloud & Gemini AI";
+}
+
+<!-- =========================================================================
+     1. HERO SECTION
+     ========================================================================= -->
+<section id="inicio" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Left Hero Content -->
+            <div class="col-lg-7">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge-tech">
+                        <i class="bi bi-shield-check"></i> 100% Remoto &amp; Cloud-Native
+                    </span>
+                    <span class="badge-tech badge-ai">
+                        <i class="bi bi-stars"></i> Soluciones con Gemini AI
+                    </span>
+                    <span class="badge-tech badge-emerald">
+                        <i class="bi bi-lightning-charge-fill"></i> Máxima Disponibilidad
+                    </span>
+                </div>
+
+                <h1 class="display-4 fw-extrabold text-light mb-3" style="letter-spacing: -0.03em; line-height: 1.15;">
+                    Ingeniería de Software, <span class="text-gradient-neon">Infraestructura Cloud</span> &amp; <span class="text-gradient-neon">Gemini AI</span>
+                </h1>
+
+                <p class="hero-lead mb-4">
+                    En <strong>GLOBALES JP</strong> transformamos la operatividad tecnológica de su empresa. Desarrollamos aplicaciones web de alto rendimiento, orquestamos dominios corporativos y seguridad DNS con Cloudflare, aprovisionamos Google Workspace con Inteligencia Artificial, y emitimos diagnósticos e informes técnicos remotos certificados.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mb-4">
+                    <a href="#servicios" class="btn btn-jp-primary">
+                        <i class="bi bi-grid-fill"></i> Explorar Servicios TI
+                    </a>
+                    <a href="https://wa.me/584142241795?text=Hola%20Globales%20JP,%20deseo%20asesor%C3%ADa%20sobre%20sus%20servicios%20TI%20y%20Software" target="_blank" rel="noopener noreferrer" class="btn btn-jp-whatsapp">
+                        <i class="bi bi-whatsapp"></i> Hablar con un Especialista
+                    </a>
+                    <a href="#ecosistema" class="btn btn-jp-outline">
+                        <i class="bi bi-layers-fill"></i> Cursos &amp; ERP
+                    </a>
+                </div>
+
+                <div class="d-flex align-items-center gap-3 pt-2">
+                    <div class="d-flex -space-x-2">
+                        <span class="badge bg-dark border border-secondary text-info p-2 rounded-3 me-1">
+                            <i class="bi bi-microsoft"></i> ASP.NET Core
+                        </span>
+                        <span class="badge bg-dark border border-secondary text-warning p-2 rounded-3 me-1">
+                            <i class="bi bi-shield-lock-fill"></i> Cloudflare WAF
+                        </span>
+                        <span class="badge bg-dark border border-secondary text-primary p-2 rounded-3 me-1">
+                            <i class="bi bi-google"></i> Google Cloud
+                        </span>
+                        <span class="badge bg-dark border border-secondary text-light p-2 rounded-3">
+                            <i class="bi bi-cpu"></i> Gemini AI
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Hero Single Laptop Visual Showcase -->
+            <div class="col-lg-5">
+                <div class="hero-laptop-card-single">
+                    <img src="~/images/hero-laptop.jpg" alt="GLOBALES JP Workstation" class="hero-laptop-img-single" />
+                    
+                    <!-- Floating Badge: 100% Remoto en su lugar -->
+                    <div class="floating-tech-badge badge-mid-left">
+                        <i class="bi bi-lightning-charge-fill text-warning"></i>
+                        <span>100% Remoto</span>
+                    </div>
+
+                    <!-- Bottom Glass Strip -->
+                    <div class="laptop-bottom-glass-strip">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="pulse-dot-green"></span>
+                            <span class="small font-mono text-light fw-semibold">Estación TI de Alto Rendimiento</span>
+                        </div>
+                        <a href="#contacto" class="btn btn-sm btn-outline-info font-mono py-1 px-3">
+                            Cotizar Ahora <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3 Badges en una sola línea debajo de la laptop (Área del cuadro rojo) -->
+                <div class="hero-badges-row-under">
+                    <div class="hero-sub-badge">
+                        <span class="pulse-dot-green"></span>
+                        <i class="bi bi-shield-check text-success"></i>
+                        <span>Cloudflare 99.9%</span>
+                    </div>
+                    <div class="hero-sub-badge">
+                        <i class="bi bi-cpu-fill text-info"></i>
+                        <span>Cloud &amp; DevOps</span>
+                    </div>
+                    <div class="hero-sub-badge">
+                        <i class="bi bi-stars" style="color: #c084fc;"></i>
+                        <span>Gemini AI Core</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     2. KEY STATS STRIP
+     ========================================================================= -->
+<section class="stats-strip">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number text-gradient">+10</div>
+                    <div class="stat-label">Años de Trayectoria TI</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number text-gradient-emerald">100%</div>
+                    <div class="stat-label">Operación Remota Ágil</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number text-gradient-ai">99.9%</div>
+                    <div class="stat-label">Uptime &amp; Seguridad Cloud</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number text-gradient">+500</div>
+                    <div class="stat-label">Soluciones Implementadas</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     3. SERVICIOS TI & SOFTWARE
+     ========================================================================= -->
+<section id="servicios" class="section-padding py-5">
+    <div class="container">
+        <div class="text-center mb-4">
+            <span class="section-tag">Servicios Especializados</span>
+            <h2 class="section-title fs-2 mb-2">Soluciones Tecnológicas de Alto Rendimiento</h2>
+            <p class="section-subtitle small mb-0">
+                Infraestructura digital robusta, software a medida y productividad cloud para empresas sin barreras geográficas.
+            </p>
+        </div>
+
+        <div class="row g-3">
+            <!-- Servicio 1: Desarrollo Web y Apps a Medida -->
+            <div class="col-lg-6">
+                <div class="jp-card p-3 p-md-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="jp-icon-box icon-blue mb-0" style="width: 44px; height: 44px; font-size: 1.25rem;">
+                                <i class="bi bi-window-fullscreen"></i>
+                            </div>
+                            <span class="badge-tech font-mono small py-1 px-2">Ingeniería Web</span>
+                        </div>
+
+                        <h3 class="h5 fw-bold text-light mb-2">Desarrollo Web &amp; Software a Medida</h3>
+                        <p class="text-jp-muted small mb-3" style="line-height: 1.55;">
+                            Portales corporativos, paneles administrativos y APIs robustas en ASP.NET Core. Código limpio, interfaces responsivas de nivel internacional y máxima velocidad de carga.
+                        </p>
+
+                        <div class="service-pills mb-3">
+                            <span class="service-pill">ASP.NET Core</span>
+                            <span class="service-pill">APIs REST</span>
+                            <span class="service-pill">UI/UX Corporativo</span>
+                            <span class="service-pill">Seguridad OWASP</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-top border-secondary border-opacity-10 d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-sm btn-jp-outline py-1 px-3" onclick="selectServiceAndScroll('Desarrollo Web & Apps a Medida')">
+                            Cotizar Desarrollo <i class="bi bi-arrow-right"></i>
+                        </button>
+                        <a href="https://wa.me/584142241795?text=Hola,%20deseo%20cotizar%20un%20proyecto%20de%20Desarrollo%20Web%20o%20Aplicaci%C3%B3n%20con%20Globales%20JP" target="_blank" class="text-jp-cyan small text-decoration-none">
+                            <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 2: Configuración y Gestión de Dominios, DNS y Cloudflare -->
+            <div class="col-lg-6">
+                <div class="jp-card p-3 p-md-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="jp-icon-box icon-cyan mb-0" style="width: 44px; height: 44px; font-size: 1.25rem;">
+                                <i class="bi bi-shield-lock-fill"></i>
+                            </div>
+                            <span class="badge-tech badge-amber font-mono small py-1 px-2">DNS &amp; Seguridad</span>
+                        </div>
+
+                        <h3 class="h5 fw-bold text-light mb-2">Gestión de Dominios, DNS &amp; Cloudflare</h3>
+                        <p class="text-jp-muted small mb-3" style="line-height: 1.55;">
+                            Orquestación Anycast global, proxy perimetral Cloudflare WAF, protección anti-DDoS y configuración de registros SPF, DKIM y DMARC para máxima entregabilidad de correos corporativos.
+                        </p>
+
+                        <div class="service-pills mb-3">
+                            <span class="service-pill">Cloudflare WAF</span>
+                            <span class="service-pill">DNS Failover</span>
+                            <span class="service-pill">SPF / DKIM / DMARC</span>
+                            <span class="service-pill">SSL Edge</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-top border-secondary border-opacity-10 d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-sm btn-jp-outline py-1 px-3" onclick="selectServiceAndScroll('Gestión de Dominios, DNS y Cloudflare')">
+                            Optimizar Dominios <i class="bi bi-arrow-right"></i>
+                        </button>
+                        <a href="https://wa.me/584142241795?text=Hola,%20necesito%20soporte%20con%20mis%20Dominios,%20DNS,%20Cloudflare%20o%20Correos%20Corporativos" target="_blank" class="text-jp-cyan small text-decoration-none">
+                            <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 3: Google Workspace & Gemini AI -->
+            <div class="col-lg-6">
+                <div class="jp-card p-3 p-md-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="jp-icon-box icon-purple mb-0" style="width: 44px; height: 44px; font-size: 1.25rem;">
+                                <i class="bi bi-stars"></i>
+                            </div>
+                            <span class="badge-tech badge-ai font-mono small py-1 px-2">Productividad &amp; AI</span>
+                        </div>
+
+                        <h3 class="h5 fw-bold text-light mb-2">Google Workspace &amp; Gemini AI</h3>
+                        <p class="text-jp-muted small mb-3" style="line-height: 1.55;">
+                            Implementación y licenciamiento de Gmail corporativo, almacenamiento compartido seguro en Google Drive y automatización inteligente con asistentes basados en Gemini AI.
+                        </p>
+
+                        <div class="service-pills mb-3">
+                            <span class="service-pill">Google Workspace</span>
+                            <span class="service-pill">Gemini AI</span>
+                            <span class="service-pill">Gmail Corporativo</span>
+                            <span class="service-pill">Drive Equipos</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-top border-secondary border-opacity-10 d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-sm btn-jp-outline py-1 px-3" onclick="selectServiceAndScroll('Google Workspace & Gemini AI Empresarial')">
+                            Implementar Workspace <i class="bi bi-arrow-right"></i>
+                        </button>
+                        <a href="https://wa.me/584142241795?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20licenciamiento%20de%20Google%20Workspace%20y%20Gemini%20AI" target="_blank" class="text-jp-cyan small text-decoration-none">
+                            <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 4: Diagnósticos e Informes Técnicos Remotos -->
+            <div id="diagnosticos" class="col-lg-6">
+                <div class="jp-card p-3 p-md-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="jp-icon-box icon-emerald mb-0" style="width: 44px; height: 44px; font-size: 1.25rem;">
+                                <i class="bi bi-file-earmark-medical-fill"></i>
+                            </div>
+                            <span class="badge-tech badge-emerald font-mono small py-1 px-2">100% Remoto</span>
+                        </div>
+
+                        <h3 class="h5 fw-bold text-light mb-2">Diagnósticos e Informes Técnicos Remotos</h3>
+                        <p class="text-jp-muted small mb-3" style="line-height: 1.55;">
+                            Evaluación remota de salud y estabilidad de equipos o servidores corporativos. Emisión de Informes Técnicos Digitales certificados en PDF con recomendaciones y auditoría.
+                        </p>
+
+                        <div class="service-pills mb-3">
+                            <span class="service-pill">Telemetría Remota</span>
+                            <span class="service-pill">Informe Certificado PDF</span>
+                            <span class="service-pill">Auditoría Operativa</span>
+                            <span class="service-pill">Cero Traslados</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-top border-secondary border-opacity-10 d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-sm btn-jp-outline py-1 px-3" onclick="selectServiceAndScroll('Diagnóstico Remoto e Informe Técnico')">
+                            Solicitar Diagnóstico <i class="bi bi-arrow-right"></i>
+                        </button>
+                        <a href="https://wa.me/584142241795?text=Hola,%20necesito%20un%20diagn%C3%B3stico%20remoto%20e%20informe%20t%C3%A9cnico%20para%20equipos%20empresariales" target="_blank" class="text-jp-cyan small text-decoration-none">
+                            <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     3.5 OPERACIONES CONTINUAS: MODELO MSP & PLANES DRP (COMPACTO)
+     ========================================================================= -->
+<section id="operaciones-continuas" class="py-4" style="background: rgba(8, 13, 25, 0.7); border-top: 1px solid var(--jp-border-glass); border-bottom: 1px solid var(--jp-border-glass);">
+    <div class="container">
+        <div class="row align-items-center mb-3">
+            <div class="col-md-8">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                    <span class="badge bg-primary bg-opacity-25 text-info border border-info border-opacity-25 font-mono px-2 py-1" style="font-size: 0.72rem;">
+                        MODELO MSP
+                    </span>
+                    <span class="badge bg-success bg-opacity-25 text-emerald border border-emerald border-opacity-25 font-mono px-2 py-1" style="font-size: 0.72rem;">
+                        PLANES DRP
+                    </span>
+                    <span class="text-jp-muted small font-mono d-none d-sm-inline">CONTINUIDAD &amp; GESTIÓN TI</span>
+                </div>
+                <h3 class="h5 fw-bold text-light mb-0">Gestión TI Proactiva &amp; Resiliencia ante Desastres</h3>
+            </div>
+            <div class="col-md-4 text-md-end mt-2 mt-md-0">
+                <a asp-controller="Home" asp-action="Nosotros" class="btn btn-sm btn-jp-outline py-1 px-3" style="font-size: 0.85rem;">
+                    <span>Conocer Nuestra Trayectoria</span>
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <!-- Tarjeta MSP Compacta -->
+            <div class="col-lg-6">
+                <div class="jp-card p-3 border border-primary border-opacity-25 h-100" style="background: linear-gradient(145deg, rgba(37, 99, 235, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%);">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <div class="jp-icon-box icon-blue mb-0" style="width: 38px; height: 38px; font-size: 1.15rem;">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="h6 fw-bold text-light mb-0">MSP (Managed Service Provider)</h4>
+                            <span class="text-jp-cyan small" style="font-size: 0.78rem;">Soporte TI Continuo &amp; Administración Delegada</span>
+                        </div>
+                    </div>
+                    <p class="text-jp-muted small mb-2" style="font-size: 0.85rem; line-height: 1.45;">
+                        Monitoreamos y administramos proactivamente sus dominios, Cloudflare WAF, Google Workspace y mesa de ayuda remota para prevenir incidentes antes de que afecten la operativa.
+                    </p>
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-2 border-top border-secondary border-opacity-10">
+                        <span class="small font-mono text-jp-muted" style="font-size: 0.78rem;">
+                            <i class="bi bi-shield-check text-info me-1"></i>Sin sobredimensionar su equipo interno
+                        </span>
+                        <a href="https://wa.me/584142241795?text=Hola%20Globales%20JP,%20quiero%20conocer%20los%20planes%20MSP%20de%20gesti%C3%B3n%20TI" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-jp-primary py-1 px-3" style="font-size: 0.82rem;">
+                            <i class="bi bi-whatsapp me-1"></i> Consultar MSP
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta DRP Compacta -->
+            <div class="col-lg-6">
+                <div class="jp-card p-3 border border-emerald border-opacity-25 h-100" style="background: linear-gradient(145deg, rgba(16, 185, 129, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%);">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <div class="jp-icon-box icon-emerald mb-0" style="width: 38px; height: 38px; font-size: 1.15rem;">
+                            <i class="bi bi-shield-fill-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="h6 fw-bold text-light mb-0">DRP (Disaster Recovery Plan)</h4>
+                            <span class="text-emerald small" style="font-size: 0.78rem;">Planes de Contingencia &amp; Respaldo Cifrado</span>
+                        </div>
+                    </div>
+                    <p class="text-jp-muted small mb-2" style="font-size: 0.85rem; line-height: 1.45;">
+                        Blindamos la continuidad de su empresa con copias automatizadas en la nube, redundancia DNS y protocolos de rápida restauración (RTO/RPO) ante contingencias o fallas.
+                    </p>
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-2 border-top border-secondary border-opacity-10">
+                        <span class="small font-mono text-jp-muted" style="font-size: 0.78rem;">
+                            <i class="bi bi-cloud-arrow-up text-success me-1"></i>Protección total de información crítica
+                        </span>
+                        <a href="https://wa.me/584142241795?text=Hola%20Globales%20JP,%20deseo%20evaluar%20un%20Plan%20DRP%20de%20recuperaci%C3%B3n%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success py-1 px-3" style="font-size: 0.82rem;">
+                            <i class="bi bi-whatsapp me-1"></i> Diseñar DRP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     4. ECOSISTEMA DE PLATAFORMAS PROPIAS
+     ========================================================================= -->
+<section id="ecosistema" class="section-padding" style="background: rgba(10, 15, 29, 0.6); border-top: 1px solid var(--jp-border-glass); border-bottom: 1px solid var(--jp-border-glass);">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-tag">Ecosistema Globales JP</span>
+            <h2 class="section-title">Nuestras Plataformas Propias</h2>
+            <p class="section-subtitle">
+                Conecte con nuestro ecosistema tecnológico de formación y gestión empresarial diseñado para potenciar profesionales y organizaciones.
+            </p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+            <!-- Plataforma 1: Cursos Globales JP -->
+            <div class="col-lg-6">
+                <div class="ecosystem-card ecosystem-cursos">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <span class="platform-badge bg-info bg-opacity-25 text-cyan border border-info border-opacity-25">
+                                <i class="bi bi-mortarboard-fill me-1"></i> Campus Virtual Oficial
+                            </span>
+                            <span class="font-mono small text-jp-muted">cursos.globalesjp.net</span>
+                        </div>
+
+                        <!-- Brand Header Cursos (JP en Rojo) -->
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="~/images/logo-jp.png" alt="Cursos Globales JP" class="brand-logo-img" style="width: 48px; height: 48px;" />
+                            <div>
+                                <h3 class="h3 fw-bold text-light mb-0">CURSOS GLOBALES <span class="brand-text-jp-red">JP</span></h3>
+                                <span class="text-jp-muted small">Aprende Gratis &bull; Certifícate desde $1 USD</span>
+                            </div>
+                        </div>
+
+                        <p class="text-jp-muted mb-4 fs-6 leading-relaxed">
+                            Nuestra plataforma de educación digital especializada en formación técnica y habilidades de alto valor: desarrollo web, administración de infraestructura, redes y herramientas de productividad tecnológica para la era moderna.
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded-3 bg-dark bg-opacity-50 border border-secondary border-opacity-25">
+                                    <div class="fw-bold text-light small mb-1"><i class="bi bi-laptop text-info me-2"></i>Contenido Práctico</div>
+                                    <div class="text-jp-muted" style="font-size: 0.8rem;">Cursos actualizados orientados a resolver problemas reales.</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded-3 bg-dark bg-opacity-50 border border-secondary border-opacity-25">
+                                    <div class="fw-bold text-light small mb-1"><i class="bi bi-award text-warning me-2"></i>Certificados Digitales</div>
+                                    <div class="text-jp-muted" style="font-size: 0.8rem;">Acreditación verificable online para su currículum.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="https://cursos.globalesjp.net/" target="_blank" rel="noopener noreferrer" class="btn btn-jp-primary w-100 py-3">
+                            <span>Ingresar a Cursos Globales JP</span>
+                            <i class="bi bi-box-arrow-up-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plataforma 2: GLOBALES JP | ERP -->
+            <div class="col-lg-6">
+                <div class="ecosystem-card ecosystem-erp">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <span class="platform-badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-25">
+                                <i class="bi bi-cloud-check-fill me-1"></i> Software Cloud 100% Online
+                            </span>
+                            <span class="font-mono small text-warning">erp.globalesjp.net</span>
+                        </div>
+
+                        <!-- Brand Header ERP (JP en Azul) -->
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="~/images/logo-jp.png" alt="GLOBALES JP ERP" class="brand-logo-img" style="width: 48px; height: 48px;" />
+                            <div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <h3 class="h3 fw-bold text-light mb-0">GLOBALES <span class="brand-text-jp-blue">JP</span> | ERP</h3>
+                                    <span class="badge bg-warning text-dark fw-bold font-mono px-2 py-1" style="font-size: 0.72rem;">LITE</span>
+                                </div>
+                                <span class="text-jp-muted small">SISTEMA EMPRESARIAL INTEGRAL EN LA NUBE</span>
+                            </div>
+                        </div>
+
+                        <p class="text-jp-muted mb-4 fs-6 leading-relaxed">
+                            Sistema integral de gestión empresarial en la nube para automatizar inventario, ventas, compras, facturación, cuentas y reportes gerenciales en un solo lugar con soporte continuo y alta disponibilidad.
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded-3 bg-dark bg-opacity-50 border border-secondary border-opacity-25">
+                                    <div class="fw-bold text-light small mb-1"><i class="bi bi-boxes text-warning me-2"></i>Inventario &amp; Facturación</div>
+                                    <div class="text-jp-muted" style="font-size: 0.8rem;">Control de stock multialmacén y emisión rápida de comprobantes.</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded-3 bg-dark bg-opacity-50 border border-secondary border-opacity-25">
+                                    <div class="fw-bold text-light small mb-1"><i class="bi bi-graph-up-arrow text-success me-2"></i>Reportes en Tiempo Real</div>
+                                    <div class="text-jp-muted" style="font-size: 0.8rem;">Métricas de ingresos, costos y márgenes de utilidad al instante.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- Botón principal de acceso directo al ERP Online -->
+                        <a href="https://erp.globalesjp.net/" target="_blank" rel="noopener noreferrer" class="btn btn-warning fw-bold text-dark w-100 py-3 mb-2 shadow">
+                            <span>Ingresar a GLOBALES JP | ERP Online</span>
+                            <i class="bi bi-box-arrow-up-right ms-2"></i>
+                        </a>
+
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-sm btn-jp-outline flex-grow-1" onclick="selectServiceAndScroll('GLOBALES JP | ERP & Licencias')">
+                                <i class="bi bi-info-circle me-1"></i> Solicitar Demostración
+                            </button>
+                            <a href="https://wa.me/584142241795?text=Hola,%20deseo%20consultar%20por%20las%20licencias%20y%20precios%20del%20GLOBALES%20JP%20ERP" target="_blank" class="btn btn-sm btn-jp-outline">
+                                <i class="bi bi-whatsapp text-success me-1"></i> Precios
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     5. PROPUESTA DE VALOR / POR QUÉ ELEGIRNOS
+     ========================================================================= -->
+<section id="nosotros" class="section-padding">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-tag">Nuestra Metodología</span>
+            <h2 class="section-title">¿Por Qué Confiar en GLOBALES JP?</h2>
+            <p class="section-subtitle">
+                Superamos los modelos tradicionales de soporte presencial lento con ingeniería remota moderna, procesos transparentes y tecnología de vanguardia.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="pillar-card">
+                    <div class="jp-icon-box icon-emerald mb-3">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                    </div>
+                    <h4 class="h5 fw-bold text-light mb-2">100% Remoto &amp; Sin Fricción</h4>
+                    <p class="text-jp-muted small mb-0">
+                        Atención inmediata sin pérdidas de tiempo por desplazamientos físicos ni traslados de equipamiento. Resolvemos con celeridad desde cualquier ubicación.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="pillar-card">
+                    <div class="jp-icon-box icon-cyan mb-3">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h4 class="h5 fw-bold text-light mb-2">Seguridad &amp; Alta Disponibilidad</h4>
+                    <p class="text-jp-muted small mb-0">
+                        Aplicamos blindaje perimetral Cloudflare, certificados SSL/TLS, políticas de protección anti-DDoS y mejores prácticas DevSecOps en cada proyecto.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="pillar-card">
+                    <div class="jp-icon-box icon-purple mb-3">
+                        <i class="bi bi-stars"></i>
+                    </div>
+                    <h4 class="h5 fw-bold text-light mb-2">Vanguardia con Gemini AI</h4>
+                    <p class="text-jp-muted small mb-0">
+                        No solo implementamos software; integramos Inteligencia Artificial aplicada para automatizar tareas rutinarias y multiplicar la productividad corporativa.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="pillar-card">
+                    <div class="jp-icon-box icon-blue mb-3">
+                        <i class="bi bi-file-earmark-check-fill"></i>
+                    </div>
+                    <h4 class="h5 fw-bold text-light mb-2">Reportes Digitales Certificados</h4>
+                    <p class="text-jp-muted small mb-0">
+                        Cada diagnóstico de infraestructura se entrega documentado en un informe técnico digital formal, ideal para auditorías y decisiones gerenciales claras.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a asp-controller="Home" asp-action="Nosotros" class="btn btn-jp-outline">
+                <span>Conocer Más Sobre Nosotros &amp; Nuestra Historia</span>
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     5.5 SOPORTE REMOTO EN 3 PASOS
+     ========================================================================= -->
+<section id="soporte-remoto" class="section-padding" style="background: rgba(5, 8, 18, 0.96); border-top: 1px solid var(--jp-border-glass);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-tag">Asistencia Remota Inmediata</span>
+            <h2 class="section-title">Soporte y Asistencia Remota en <span class="text-gradient">3 Sencillos Pasos</span></h2>
+            <p class="section-subtitle">Soluciones rápidas, seguras y cifradas sin importar dónde te encuentres.</p>
+        </div>
+
+        <!-- Banner Principal de Soporte -->
+        <div class="remote-support-banner mb-5">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="jp-icon-box icon-cyan" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <div>
+                            <h3 class="h4 fw-bold text-light mb-0">Soporte Técnico y Diagnóstico Remoto</h3>
+                            <span class="text-jp-cyan small">Conexión cifrada de extremo a extremo &bull; Clave temporal de único uso</span>
+                        </div>
+                    </div>
+                    <p class="text-jp-muted mb-0" style="font-size: 0.97rem; line-height: 1.7;">
+                        Brindamos asistencia remota garantizando la privacidad de tu información mediante conexiones cifradas de extremo a extremo y claves temporales de único uso. Diagnosticamos y resolvemos requerimientos de software, configuración de correo y rendimiento en solo 3 pasos.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+                        <span class="badge-tech badge-emerald">
+                            <i class="bi bi-lock-fill"></i> Cifrado E2E
+                        </span>
+                        <span class="badge-tech">
+                            <i class="bi bi-key-fill"></i> Clave de Único Uso
+                        </span>
+                        <span class="badge-tech badge-ai">
+                            <i class="bi bi-lightning-charge-fill"></i> Respuesta Inmediata
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Pasos en Cuadrícula -->
+        <div class="row g-4">
+            <!-- Paso 1 -->
+            <div class="col-lg-4">
+                <div class="remote-step-card">
+                    <div class="step-number-badge">01</div>
+                    <div class="step-icon-box icon-cyan">
+                        <i class="bi bi-download"></i>
+                    </div>
+                    <h4 class="fw-bold text-light mb-2">Descarga el Software de Conexión</h4>
+                    <p class="text-jp-muted small mb-4">
+                        Descarga nuestra herramienta recomendada <strong class="text-light">(AnyDesk / TeamViewer QuickSupport)</strong> con un solo clic. Es gratuito, seguro y no requiere instalación permanente.
+                    </p>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="https://download.anydesk.com/AnyDesk.exe" target="_blank" rel="noopener noreferrer" class="btn btn-jp-primary btn-sm-custom">
+                            <i class="bi bi-download"></i> AnyDesk (Recomendado)
+                        </a>
+                        <a href="https://download.teamviewer.com/download/TeamViewerQS.exe" target="_blank" rel="noopener noreferrer" class="btn btn-jp-outline btn-sm-custom">
+                            <i class="bi bi-download"></i> TeamViewer QuickSupport
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="col-lg-4">
+                <div class="remote-step-card">
+                    <div class="step-number-badge">02</div>
+                    <div class="step-icon-box icon-purple">
+                        <i class="bi bi-key-fill"></i>
+                    </div>
+                    <h4 class="fw-bold text-light mb-2">Genera tus Credenciales Temporales</h4>
+                    <p class="text-jp-muted small mb-4">
+                        Abre la aplicación descargada para obtener tu <strong class="text-light">ID de conexión</strong> y la <strong class="text-light">contraseña aleatoria de un solo uso</strong>. Estos datos cambian en cada sesión, garantizando máxima privacidad.
+                    </p>
+                    <div class="step-info-box">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-shield-lock-fill text-success"></i>
+                            <span class="text-light small fw-semibold">Tu privacidad está protegida</span>
+                        </div>
+                        <p class="text-jp-muted mb-0" style="font-size: 0.8rem;">
+                            Nadie puede conectarse sin tu ID y clave vigente. La sesión puede cerrarse en cualquier momento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="col-lg-4">
+                <div class="remote-step-card">
+                    <div class="step-number-badge">03</div>
+                    <div class="step-icon-box icon-emerald">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <h4 class="fw-bold text-light mb-2">Envíanos los Datos por WhatsApp</h4>
+                    <p class="text-jp-muted small mb-4">
+                        Comparte tu <strong class="text-light">ID</strong> y <strong class="text-light">clave temporal</strong> con nuestro equipo técnico a través de WhatsApp Business para iniciar la atención de inmediato. Un especialista se conectará en pocos minutos.
+                    </p>
+                    <a href="https://wa.me/584142241795?text=Hola%20Globales%20JP%20🖥️%0A%0ADeseo%20iniciar%20una%20sesión%20de%20soporte%20remoto.%0A%0AMi%20ID%20de%20AnyDesk%3A%20__________%0AMi%20Clave%3A%20__________%0A%0ADescripción%20del%20problema%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-jp-whatsapp w-100">
+                        <i class="bi bi-whatsapp"></i> Enviar Datos por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     6. CONTACTO Y REDES SOCIALES
+     ========================================================================= -->
+<section id="contacto" class="section-padding" style="background: rgba(7, 11, 20, 0.9);">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-tag">Hablemos de su Proyecto</span>
+            <h2 class="section-title">Contáctenos Directamente</h2>
+            <p class="section-subtitle">
+                Comuníquese con nuestros ingenieros a través de WhatsApp Business, redes sociales o completando el formulario corporativo.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- GRID: Canales de Contacto (cuadrícula 2x2) -->
+            <div class="col-lg-5">
+                <h3 class="h5 fw-bold text-light mb-3">Canales Oficiales de Atención</h3>
+
+                <div class="row g-3 mb-3">
+                    <!-- WhatsApp -->
+                    <div class="col-6">
+                        <a href="https://wa.me/584142241795?text=Hola%20Globales%20JP,%20deseo%20asesor%C3%ADa%20y%20presupuesto%20para%20un%20servicio%20TI" target="_blank" rel="noopener noreferrer" class="contact-grid-card">
+                            <div class="channel-icon channel-wa mb-2">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div class="fw-bold text-light small">WhatsApp Business</div>
+                            <div class="text-jp-muted" style="font-size: 0.75rem;">+58 (414) 224.17.95</div>
+                            <span class="badge bg-success bg-opacity-25 text-success mt-1" style="font-size: 0.68rem;">Respuesta Rápida</span>
+                        </a>
+                    </div>
+                    <!-- Instagram -->
+                    <div class="col-6">
+                        <a href="https://www.instagram.com/globalesjp" target="_blank" rel="noopener noreferrer" class="contact-grid-card">
+                            <div class="channel-icon channel-ig mb-2">
+                                <i class="bi bi-instagram"></i>
+                            </div>
+                            <div class="fw-bold text-light small">Instagram Oficial</div>
+                            <div class="text-jp-muted" style="font-size: 0.75rem;">@@globalesjp</div>
+                            <div class="mt-1" style="font-size: 0.72rem; color: #ec4899;">Ver publicaciones →</div>
+                        </a>
+                    </div>
+                    <!-- TikTok -->
+                    <div class="col-6">
+                        <a href="https://www.tiktok.com/@@globalesjp" target="_blank" rel="noopener noreferrer" class="contact-grid-card">
+                            <div class="channel-icon channel-tt mb-2">
+                                <i class="bi bi-tiktok"></i>
+                            </div>
+                            <div class="fw-bold text-light small">TikTok Oficial</div>
+                            <div class="text-jp-muted" style="font-size: 0.75rem;">@@globalesjp</div>
+                            <div class="text-light mt-1" style="font-size: 0.72rem;">Ver publicaciones →</div>
+                        </a>
+                    </div>
+                    <!-- Correo -->
+                    <div class="col-6">
+                        <a href="mailto:contacto@globalesjp.net" class="contact-grid-card">
+                            <div class="channel-icon channel-mail mb-2">
+                                <i class="bi bi-envelope-check-fill"></i>
+                            </div>
+                            <div class="fw-bold text-light small">Correo Corporativo</div>
+                            <div class="text-jp-muted" style="font-size: 0.72rem;">contacto@globalesjp.net</div>
+                            <div class="text-jp-cyan mt-1" style="font-size: 0.72rem;">Correo formal →</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ecosistema ERP & Cursos -->
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="p-3 rounded-3 border border-secondary border-opacity-25 bg-dark bg-opacity-40 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="bi bi-grid-3x3-gap-fill text-warning"></i>
+                                    <span class="fw-semibold text-light small">GLOBALES JP | ERP</span>
+                                </div>
+                                <p class="text-jp-muted mb-2" style="font-size: 0.78rem;">Sistema empresarial en la nube para inventario y facturación.</p>
+                            </div>
+                            <a href="https://erp.globalesjp.net/" target="_blank" class="btn btn-sm btn-outline-warning w-100">
+                                erp.globalesjp.net <i class="bi bi-box-arrow-up-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 rounded-3 border border-secondary border-opacity-25 bg-dark bg-opacity-40 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="bi bi-mortarboard-fill text-info"></i>
+                                    <span class="fw-semibold text-light small">Cursos Globales JP</span>
+                                </div>
+                                <p class="text-jp-muted mb-2" style="font-size: 0.78rem;">Campus virtual y capacitaciones tecnológicas certificadas.</p>
+                            </div>
+                            <a href="https://cursos.globalesjp.net/" target="_blank" class="btn btn-sm btn-outline-info w-100">
+                                cursos.globalesjp.net <i class="bi bi-box-arrow-up-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Contacto -->
+            <div class="col-lg-7">
+                <div class="jp-form-card">
+                    <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-secondary border-opacity-10">
+                        <div>
+                            <h3 class="h4 fw-bold text-light mb-1">Solicitar Presupuesto o Diagnóstico</h3>
+                            <p class="text-jp-muted small mb-0">Complete los datos y nuestro equipo técnico le responderá a la brevedad.</p>
+                        </div>
+                        <span class="badge bg-primary bg-opacity-25 text-info font-mono small">Sin Compromiso</span>
+                    </div>
+
+                    @if (TempData["ContactSuccess"] != null)
+                    {
+                        <div class="alert alert-success border-success bg-dark bg-opacity-80 text-light d-flex align-items-center gap-3 mb-4" role="alert">
+                            <i class="bi bi-check-circle-fill text-success fs-3 flex-shrink-0"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1 text-success">¡Solicitud Registrada con Éxito!</h6>
+                                <div class="small">@TempData["ContactSuccess"]</div>
+                            </div>
+                        </div>
+                    }
+
+                    <form asp-controller="Home" asp-action="Contact" method="post" id="mainContactForm">
+                        @Html.AntiForgeryToken()
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label asp-for="FullName" class="jp-form-label"><i class="bi bi-person text-info"></i> Nombre y Apellido *</label>
+                                <input asp-for="FullName" id="contactFullName" class="form-control jp-input" placeholder="Ej. Carlos Mendoza" />
+                                <span asp-validation-for="FullName" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Email" class="jp-form-label"><i class="bi bi-envelope text-info"></i> Correo Electrónico *</label>
+                                <input asp-for="Email" id="contactEmail" class="form-control jp-input" placeholder="nombre@empresa.com" />
+                                <span asp-validation-for="Email" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Phone" class="jp-form-label"><i class="bi bi-telephone text-info"></i> Teléfono o WhatsApp *</label>
+                                <input asp-for="Phone" id="contactPhone" class="form-control jp-input" placeholder="+58 414 000 0000" />
+                                <span asp-validation-for="Phone" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Company" class="jp-form-label"><i class="bi bi-building text-info"></i> Empresa / Organización</label>
+                                <input asp-for="Company" id="contactCompany" class="form-control jp-input" placeholder="Ej. Corporación XYZ (Opcional)" />
+                                <span asp-validation-for="Company" class="text-danger small"></span>
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="Service" class="jp-form-label"><i class="bi bi-layers text-info"></i> Servicio de Interés *</label>
+                                <select asp-for="Service" id="contactServiceSelect" class="form-select jp-input">
+                                    <option value="">-- Seleccione el servicio que requiere --</option>
+                                    <option value="Desarrollo Web &amp; Apps a Medida">Desarrollo de Páginas Web Corporativas y Aplicaciones a Medida</option>
+                                    <option value="Gestión de Dominios, DNS y Cloudflare">Configuración y Gestión de Dominios (DNS, Cloudflare, Correos SPF/DKIM)</option>
+                                    <option value="Google Workspace &amp; Gemini AI Empresarial">Implementación y Licencias de Google Workspace &amp; Gemini AI</option>
+                                    <option value="Diagnóstico Remoto e Informe Técnico">Diagnóstico e Informe Técnico Remoto de Infraestructura / Equipos</option>
+                                    <option value="GLOBALES JP | ERP &amp; Licencias">GLOBALES JP | ERP - Demostración y Licenciamiento</option>
+                                    <option value="Consultoría Integral de TI">Consultoría y Asesoría Tecnológica Integral</option>
+                                </select>
+                                <span asp-validation-for="Service" class="text-danger small"></span>
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="Message" class="jp-form-label"><i class="bi bi-chat-left-dots text-info"></i> Detalle de su requerimiento *</label>
+                                <textarea asp-for="Message" id="contactMessage" rows="4" class="form-control jp-input" placeholder="Cuéntenos sobre su proyecto, necesidades técnicas o el diagnóstico que requiere..."></textarea>
+                                <span asp-validation-for="Message" class="text-danger small"></span>
+                            </div>
+                            <div class="col-12 pt-2">
+                                <div class="d-flex flex-column flex-sm-row gap-3">
+                                    <button type="submit" class="btn btn-jp-primary flex-grow-1 py-3">
+                                        <i class="bi bi-send-fill"></i> Enviar Mensaje a Correo
+                                    </button>
+                                    <button type="button" id="btnSendWhatsApp" class="btn btn-jp-whatsapp py-3">
+                                        <i class="bi bi-whatsapp"></i> Enviar por WhatsApp
+                                    </button>
+                                </div>
+                                <div class="text-jp-muted small text-center mt-3">
+                                    <i class="bi bi-lock-fill text-success me-1"></i> Sus datos son confidenciales y están protegidos. Respuesta garantizada en menos de 24 horas.
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
