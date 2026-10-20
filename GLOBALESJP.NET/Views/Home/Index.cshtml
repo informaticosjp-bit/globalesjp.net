@@ -787,84 +787,44 @@
                 </div>
             </div>
 
-            <!-- Formulario de Contacto -->
+            <!-- Formulario de Contacto Funcional Tally.so -->
             <div class="col-lg-7">
-                <div class="jp-form-card">
-                    <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-secondary border-opacity-10">
+                <div class="jp-form-card p-3 p-md-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-secondary border-opacity-10">
                         <div>
-                            <h3 class="h4 fw-bold text-light mb-1">Solicitar Presupuesto o Diagnóstico</h3>
-                            <p class="text-jp-muted small mb-0">Complete los datos y nuestro equipo técnico le responderá a la brevedad.</p>
+                            <h3 class="h5 fw-bold text-light mb-1">Solicitar Presupuesto o Diagnóstico</h3>
+                            <p class="text-jp-muted small mb-0">Envíanos tu requerimiento y te contactaremos de inmediato.</p>
                         </div>
-                        <span class="badge bg-primary bg-opacity-25 text-info font-mono small">Sin Compromiso</span>
+                        <span class="badge bg-success bg-opacity-25 text-success font-mono small px-2 py-1">
+                            <i class="bi bi-check-circle-fill me-1"></i>Notificación al Correo
+                        </span>
                     </div>
 
-                    @if (TempData["ContactSuccess"] != null)
-                    {
-                        <div class="alert alert-success border-success bg-dark bg-opacity-80 text-light d-flex align-items-center gap-3 mb-4" role="alert">
-                            <i class="bi bi-check-circle-fill text-success fs-3 flex-shrink-0"></i>
-                            <div>
-                                <h6 class="fw-bold mb-1 text-success">¡Solicitud Registrada con Éxito!</h6>
-                                <div class="small">@TempData["ContactSuccess"]</div>
-                            </div>
-                        </div>
-                    }
+                    <!-- Embed de Tally.so -->
+                    <div class="tally-wrapper" style="min-height: 520px; border-radius: 12px; overflow: hidden;">
+                        <iframe 
+                            data-tally-src="https://tally.so/embed/BzMa9A?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                            src="https://tally.so/embed/BzMa9A?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                            loading="lazy" 
+                            width="100%" 
+                            height="520" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0" 
+                            title="Formulario de Contacto GLOBALES JP"
+                            style="border: none; width: 100%;">
+                        </iframe>
+                    </div>
 
-                    <form asp-controller="Home" asp-action="Contact" method="post" id="mainContactForm">
-                        @Html.AntiForgeryToken()
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label asp-for="FullName" class="jp-form-label"><i class="bi bi-person text-info"></i> Nombre y Apellido *</label>
-                                <input asp-for="FullName" id="contactFullName" class="form-control jp-input" placeholder="Ej. Carlos Mendoza" />
-                                <span asp-validation-for="FullName" class="text-danger small"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label asp-for="Email" class="jp-form-label"><i class="bi bi-envelope text-info"></i> Correo Electrónico *</label>
-                                <input asp-for="Email" id="contactEmail" class="form-control jp-input" placeholder="nombre@empresa.com" />
-                                <span asp-validation-for="Email" class="text-danger small"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label asp-for="Phone" class="jp-form-label"><i class="bi bi-telephone text-info"></i> Teléfono o WhatsApp *</label>
-                                <input asp-for="Phone" id="contactPhone" class="form-control jp-input" placeholder="+58 414 000 0000" />
-                                <span asp-validation-for="Phone" class="text-danger small"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label asp-for="Company" class="jp-form-label"><i class="bi bi-building text-info"></i> Empresa / Organización</label>
-                                <input asp-for="Company" id="contactCompany" class="form-control jp-input" placeholder="Ej. Corporación XYZ (Opcional)" />
-                                <span asp-validation-for="Company" class="text-danger small"></span>
-                            </div>
-                            <div class="col-12">
-                                <label asp-for="Service" class="jp-form-label"><i class="bi bi-layers text-info"></i> Servicio de Interés *</label>
-                                <select asp-for="Service" id="contactServiceSelect" class="form-select jp-input">
-                                    <option value="">-- Seleccione el servicio que requiere --</option>
-                                    <option value="Desarrollo Web &amp; Apps a Medida">Desarrollo de Páginas Web Corporativas y Aplicaciones a Medida</option>
-                                    <option value="Gestión de Dominios, DNS y Cloudflare">Configuración y Gestión de Dominios (DNS, Cloudflare, Correos SPF/DKIM)</option>
-                                    <option value="Google Workspace &amp; Gemini AI Empresarial">Implementación y Licencias de Google Workspace &amp; Gemini AI</option>
-                                    <option value="Diagnóstico Remoto e Informe Técnico">Diagnóstico e Informe Técnico Remoto de Infraestructura / Equipos</option>
-                                    <option value="GLOBALES JP | ERP &amp; Licencias">GLOBALES JP | ERP - Demostración y Licenciamiento</option>
-                                    <option value="Consultoría Integral de TI">Consultoría y Asesoría Tecnológica Integral</option>
-                                </select>
-                                <span asp-validation-for="Service" class="text-danger small"></span>
-                            </div>
-                            <div class="col-12">
-                                <label asp-for="Message" class="jp-form-label"><i class="bi bi-chat-left-dots text-info"></i> Detalle de su requerimiento *</label>
-                                <textarea asp-for="Message" id="contactMessage" rows="4" class="form-control jp-input" placeholder="Cuéntenos sobre su proyecto, necesidades técnicas o el diagnóstico que requiere..."></textarea>
-                                <span asp-validation-for="Message" class="text-danger small"></span>
-                            </div>
-                            <div class="col-12 pt-2">
-                                <div class="d-flex flex-column flex-sm-row gap-3">
-                                    <button type="submit" class="btn btn-jp-primary flex-grow-1 py-3">
-                                        <i class="bi bi-send-fill"></i> Enviar Mensaje a Correo
-                                    </button>
-                                    <button type="button" id="btnSendWhatsApp" class="btn btn-jp-whatsapp py-3">
-                                        <i class="bi bi-whatsapp"></i> Enviar por WhatsApp
-                                    </button>
-                                </div>
-                                <div class="text-jp-muted small text-center mt-3">
-                                    <i class="bi bi-lock-fill text-success me-1"></i> Sus datos son confidenciales y están protegidos. Respuesta garantizada en menos de 24 horas.
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <!-- Enlaces rápidos de apoyo -->
+                    <div class="pt-3 mt-2 border-top border-secondary border-opacity-10 d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <a href="https://tally.so/r/BzMa9A" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-jp-outline">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> Abrir en ventana completa
+                        </a>
+                        <a href="https://wa.me/584142241795?text=Hola%20Globales%20JP,%20deseo%20atenci%C3%B3n%20inmediata%20para%20un%20proyecto%20o%20diagn%C3%B3stico%20TI" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-jp-whatsapp">
+                            <i class="bi bi-whatsapp me-1"></i> Consultar por WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
