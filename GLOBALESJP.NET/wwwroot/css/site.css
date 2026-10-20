@@ -1130,18 +1130,27 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.1rem 1.4rem;
-  background: linear-gradient(to top, rgba(7, 11, 20, 0.96) 0%, rgba(7, 11, 20, 0.8) 70%, transparent 100%);
+  padding: 0.65rem 1rem;
+  background: linear-gradient(to top, rgba(7, 11, 20, 0.98) 0%, rgba(7, 11, 20, 0.85) 75%, transparent 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
   z-index: 2;
 }
 
+.laptop-strip-text {
+  font-size: 0.8rem;
+}
+
+.laptop-strip-btn {
+  font-size: 0.75rem;
+}
+
 [data-bs-theme="light"] .laptop-bottom-glass-strip {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.85) 70%, transparent 100%);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.85) 75%, transparent 100%);
 }
 
 .floating-tech-badge {
@@ -1179,7 +1188,7 @@ body {
 }
 
 .badge-mid-left {
-  bottom: 72px;
+  bottom: 56px;
   left: 16px;
 }
 
@@ -1498,6 +1507,33 @@ body {
   }
 }
 
+/* Hero CTA Group & Button Responsiveness */
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-btn {
+  padding: 0.75rem 1.45rem;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* En monitores cuadrados y medianos (992px a 1399px), asegurar que los 3 botones permanezcan en una sola línea */
+@media (min-width: 992px) and (max-width: 1399px) {
+  .hero-cta-group {
+    gap: 0.45rem !important;
+    flex-wrap: nowrap !important;
+  }
+  .hero-btn {
+    padding: 0.55rem 0.8rem !important;
+    font-size: 0.83rem !important;
+    gap: 0.35rem !important;
+  }
+}
+
 /* Adaptación del contenido para monitores de relación 4:3 y 5:4 (altura o anchura compacta) */
 @media (max-width: 1280px) {
   .hero-section {
@@ -1519,6 +1555,19 @@ body {
   .hero-laptop-card-single {
     max-width: 420px;
     margin: 0 auto;
+  }
+
+  .hero-laptop-img-single {
+    height: 330px;
+  }
+
+  .badge-mid-left {
+    bottom: 54px !important;
+    left: 14px !important;
+  }
+
+  .laptop-bottom-glass-strip {
+    padding: 0.55rem 0.85rem !important;
   }
 
   .hero-badges-row-under {
