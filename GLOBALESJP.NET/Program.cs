@@ -18,6 +18,9 @@ else if (!builder.Environment.IsDevelopment())
 // Servicios MVC ligeros sin dependencias de base de datos
 builder.Services.AddControllersWithViews();
 
+// Servicio de envío de correo (MailKit + Gmail SMTP)
+builder.Services.AddTransient<GLOBALESJP.NET.Services.IEmailService, GLOBALESJP.NET.Services.EmailService>();
+
 var app = builder.Build();
 
 // Pipeline HTTP

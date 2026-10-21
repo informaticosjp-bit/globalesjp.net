@@ -752,7 +752,9 @@ body {
 }
 
 .form-control.jp-input,
-.form-select.jp-input {
+.form-select.jp-input,
+.form-control.jp-form-input,
+.form-select.jp-form-input {
   background-color: rgba(10, 16, 30, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #f8fafc;
@@ -763,20 +765,32 @@ body {
 }
 
 .form-control.jp-input:focus,
-.form-select.jp-input:focus {
+.form-select.jp-input:focus,
+.form-control.jp-form-input:focus,
+.form-select.jp-form-input:focus {
   background-color: rgba(10, 16, 30, 0.95);
   border-color: #38bdf8;
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
   color: #fff;
 }
 
-.form-select.jp-input option {
+.form-select.jp-input option,
+.form-select.jp-form-input option {
   background-color: #0f172a;
   color: #f8fafc;
 }
 
-.form-control.jp-input::placeholder {
+.form-control.jp-input::placeholder,
+.form-control.jp-form-input::placeholder {
   color: #64748b;
+}
+
+/* Validation errors */
+.jp-form-input ~ .text-danger,
+.jp-input ~ .text-danger {
+  font-size: 0.78rem;
+  margin-top: 3px;
+  display: block;
 }
 
 /* Floating WhatsApp Button */
