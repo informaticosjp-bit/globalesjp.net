@@ -46,6 +46,8 @@ html {
   color: var(--jp-text-main);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -54,6 +56,7 @@ body {
   background-color: var(--jp-bg-dark);
   color: var(--jp-text-main);
   overflow-x: hidden;
+  max-width: 100vw;
   position: relative;
   min-height: 100vh;
 }
@@ -1617,5 +1620,123 @@ body {
     padding: 1.4rem;
   }
 }
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS: SMARTPHONES & NARROW SCREENS (< 768px and < 576px)
+   Garantiza que ningún elemento (Gemini AI, WhatsApp, Badges) se desborde
+   ========================================================================== */
+
+/* Badges de tecnologías debajo del Hero */
+.hero-tech-badges {
+  width: 100%;
+}
+
+.hero-tech-badges .badge {
+  font-size: 0.8rem;
+  padding: 0.45rem 0.65rem !important;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 767.98px) {
+  /* Botones principales en móviles: 100% de ancho con área táctil cómoda */
+  .hero-cta-group {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 0.6rem !important;
+  }
+
+  .hero-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+    white-space: normal !important;
+  }
+
+  /* WhatsApp Flotante en móviles: Adaptado a márgenes seguros y sin estorbar */
+  .floating-whatsapp {
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+    right: calc(16px + env(safe-area-inset-right, 0px)) !important;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.55rem !important;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.55) !important;
+  }
+
+  .floating-whatsapp:hover {
+    transform: scale(1.05) !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Prevenir cualquier desbordamiento horizontal en móviles pequeños */
+  .hero-tech-badges {
+    gap: 0.35rem !important;
+  }
+
+  .hero-tech-badges .badge {
+    font-size: 0.73rem !important;
+    padding: 0.35rem 0.5rem !important;
+  }
+
+  /* Badges debajo de la laptop: Se distribuyen en 2 filas limpias sin cortar Gemini AI Core */
+  .hero-badges-row-under {
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+  }
+
+  .hero-sub-badge {
+    flex: 1 1 calc(50% - 0.4rem) !important;
+    min-width: 120px !important;
+    font-size: 0.72rem !important;
+    padding: 0.45rem 0.5rem !important;
+  }
+
+  /* El tercer badge (Gemini AI Core) ocupa el 100% de ancho centrado */
+  .hero-sub-badge:last-child {
+    flex: 1 1 100% !important;
+  }
+
+  /* Ajuste de la laptop en móviles */
+  .hero-laptop-card-single {
+    max-width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .hero-laptop-img-single {
+    height: 240px !important;
+  }
+
+  .badge-mid-left {
+    bottom: 50px !important;
+    left: 12px !important;
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.65rem !important;
+  }
+
+  .laptop-bottom-glass-strip {
+    padding: 0.45rem 0.75rem !important;
+  }
+
+  .laptop-strip-text {
+    font-size: 0.75rem !important;
+  }
+
+  .laptop-strip-btn {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.55rem !important;
+  }
+
+  /* WhatsApp Flotante para pantallas ultra-estrechas (< 400px) */
+  .floating-whatsapp {
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+    right: calc(14px + env(safe-area-inset-right, 0px)) !important;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.45rem !important;
+  }
+}
+
 
 
