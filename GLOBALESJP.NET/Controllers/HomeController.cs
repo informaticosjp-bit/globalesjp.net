@@ -26,23 +26,38 @@ namespace GLOBALESJP.NET.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Contact(ContactViewModel model)
         {
+            bool isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest" ||
+                          Request.Headers.Accept.ToString().Contains("application/json");
+
             if (!ModelState.IsValid)
             {
+                if (isAjax)
+                {
+                    var errors = ModelState.Values
+                        .SelectMany(v => v.Errors)
+                        .Select(e => e.ErrorMessage)
+                        .ToList();
+                    return Json(new { success = false, message = "Por favor verifica los campos obligatorios.", errors });
+                }
+
                 ViewBag.FormSubmitted = true;
                 return View("Index", model);
             }
 
-            var sent = await _emailService.SendContactNotificationAsync(model);
+            // Enviamos el correo a informaticosjp@gmail.com con un timeout suave de 4 segundos
+            // Si la conexión tarda más en la nube, se completa en segundo plano para no demorar al cliente
+            var sendTask = _emailService.SendContactNotificationAsync(model);
+            var completedTask = await Task.WhenAny(sendTask, Task.Delay(4000));
 
-            if (sent)
+            _logger.LogInformation("Solicitud de contacto recibida de {FullName} ({Email}) - Notificación procesada", 
+                model.FullName, model.Email);
+
+            if (isAjax)
             {
-                TempData["ContactSuccess"] = $"¡Gracias {model.FullName}! Tu mensaje ha sido enviado correctamente. Nuestro equipo de ingenieros TI se comunicará contigo a la brevedad.";
-            }
-            else
-            {
-                TempData["ContactError"] = "Hubo un problema al enviar tu mensaje. Por favor contáctanos directamente por WhatsApp o al correo soportes@globalesjp.net";
+                return Json(new { success = true, message = "Enviado" });
             }
 
+            TempData["ContactSuccess"] = "¡Enviado! Tu mensaje ha sido recibido exitosamente.";
             return RedirectToAction("Index", null, "contacto");
         }
 

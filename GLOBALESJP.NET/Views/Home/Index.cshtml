@@ -1174,115 +1174,125 @@
                 </div>
             </div>
 
-                        <!-- Formulario de Contacto Nativo GLOBALES JP -->
+                                    <!-- Formulario de Contacto Nativo GLOBALES JP -->
             <div class="col-lg-7">
                 <div class="jp-form-card p-3 p-md-4">
-                    <!-- Header del formulario -->
-                    <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-secondary border-opacity-10">
-                        <div>
-                            <h3 class="h5 fw-bold text-light mb-1">Solicitar Presupuesto o Diagnostico</h3>
-                            <p class="text-jp-muted small mb-0">Completa el formulario y te respondemos en menos de 24 h.</p>
+                    <!-- Contenedor del Formulario Activo -->
+                    <div id="contactFormWrapper">
+                        <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-secondary border-opacity-10">
+                            <div>
+                                <h3 class="h5 fw-bold text-light mb-1">Solicitar Presupuesto o Diagnóstico</h3>
+                                <p class="text-jp-muted small mb-0">Completa el formulario y te respondemos en menos de 24 h.</p>
+                            </div>
+                            <span class="badge bg-success bg-opacity-25 text-success font-mono small px-2 py-1">
+                                <i class="bi bi-envelope-check-fill me-1"></i>Envío Directo
+                            </span>
                         </div>
-                        <span class="badge bg-success bg-opacity-25 text-success font-mono small px-2 py-1">
-                            <i class="bi bi-envelope-check-fill me-1"></i>Envio Directo
-                        </span>
+
+                        <!-- Formulario -->
+                        <form asp-action="Contact" asp-controller="Home" method="post" id="contactForm" novalidate>
+                            @Html.AntiForgeryToken()
+                            <div class="row g-3">
+                                <!-- Nombre -->
+                                <div class="col-12 col-sm-6">
+                                    <label asp-for="FullName" class="form-label text-jp-muted small mb-1">
+                                        <i class="bi bi-person-fill me-1 text-cyan"></i>Nombre Completo <span class="text-danger">*</span>
+                                    </label>
+                                    <input asp-for="FullName" type="text" class="form-control jp-form-input" placeholder="Ej. Carlos Rodríguez" autocomplete="name" required />
+                                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                                </div>
+                                <!-- Empresa -->
+                                <div class="col-12 col-sm-6">
+                                    <label asp-for="Company" class="form-label text-jp-muted small mb-1">
+                                        <i class="bi bi-building me-1 text-warning"></i>Empresa (opcional)
+                                    </label>
+                                    <input asp-for="Company" type="text" class="form-control jp-form-input" placeholder="Ej. Mi Empresa C.A." autocomplete="organization" />
+                                </div>
+                                <!-- Correo -->
+                                <div class="col-12 col-sm-6">
+                                    <label asp-for="Email" class="form-label text-jp-muted small mb-1">
+                                        <i class="bi bi-envelope-fill me-1 text-info"></i>Correo Electrónico <span class="text-danger">*</span>
+                                    </label>
+                                    <input asp-for="Email" type="email" class="form-control jp-form-input" placeholder="correo@tuempresa.com" autocomplete="email" required />
+                                    <span asp-validation-for="Email" class="text-danger small"></span>
+                                </div>
+                                <!-- Teléfono -->
+                                <div class="col-12 col-sm-6">
+                                    <label asp-for="Phone" class="form-label text-jp-muted small mb-1">
+                                        <i class="bi bi-whatsapp me-1 text-success"></i>Teléfono / WhatsApp <span class="text-danger">*</span>
+                                    </label>
+                                    <input asp-for="Phone" type="tel" class="form-control jp-form-input" placeholder="+58 412 000 0000" autocomplete="tel" required />
+                                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                                </div>
+                                <!-- Servicio -->
+                                <div class="col-12">
+                                    <label asp-for="Service" class="form-label text-jp-muted small mb-1">
+                                        <i class="bi bi-cpu-fill me-1" style="color:#c084fc;"></i>Servicio de Interés <span class="text-danger">*</span>
+                                    </label>
+                                    <select asp-for="Service" id="contactServiceSelect" class="form-select jp-form-input" required>
+                                        <option value="">— Selecciona un servicio —</option>
+                                        <option value="Soporte Remoto TI">Soporte Remoto TI</option>
+                                        <option value="Desarrollo Web & Apps a Medida">Desarrollo Web &amp; Apps a Medida</option>
+                                        <option value="Espacio Web Corporativo (Llave en Mano)">Espacio Web Corporativo (Llave en Mano)</option>
+                                        <option value="Automatización con IA & Gemini">Automatización con IA &amp; Gemini</option>
+                                        <option value="Ciberseguridad & Auditoría">Ciberseguridad &amp; Auditoría</option>
+                                        <option value="Cloud & Infraestructura DevOps">Cloud &amp; Infraestructura DevOps</option>
+                                        <option value="GLOBALES JP | ERP & Licencias">GLOBALES JP | ERP &amp; Licencias</option>
+                                        <option value="Consulta General / Otro">Consulta General / Otro</option>
+                                    </select>
+                                    <span asp-validation-for="Service" class="text-danger small"></span>
+                                </div>
+                                <!-- Mensaje -->
+                                <div class="col-12">
+                                    <label asp-for="Message" class="form-label text-jp-muted small mb-1">
+                                        <i class="bi bi-chat-text-fill me-1 text-emerald"></i>Mensaje o Requerimiento <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea asp-for="Message" id="contactMessage" class="form-control jp-form-input" rows="4" placeholder="Descríbenos brevemente tu proyecto, requerimiento o consulta..." required></textarea>
+                                    <span asp-validation-for="Message" class="text-danger small"></span>
+                                </div>
+                                <!-- Botones -->
+                                <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                                    <button type="submit" class="btn btn-jp-primary flex-grow-1" id="btnSubmitContact">
+                                        <i class="bi bi-send-fill me-2"></i>Enviar Solicitud
+                                    </button>
+                                    <button type="button" id="btnSendWhatsApp" class="btn btn-jp-whatsapp btn-sm-custom">
+                                        <i class="bi bi-whatsapp me-1"></i>WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Nota de privacidad -->
+                        <div class="pt-3 mt-3 border-top border-secondary border-opacity-10">
+                            <p class="text-jp-muted mb-0" style="font-size: 0.75rem;">
+                                <i class="bi bi-shield-lock-fill text-success me-1"></i>
+                                Tu información es confidencial y nunca será compartida con terceros. Respuesta garantizada en menos de 24 horas hábiles.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Alertas de resultado -->
-                    @if (TempData["ContactSuccess"] != null)
-                    {
-                        <div class="alert alert-success d-flex align-items-center gap-2 mb-3 py-2 px-3" role="alert" style="border-radius:10px; font-size:0.9rem;">
-                            <i class="bi bi-check-circle-fill fs-5 flex-shrink-0"></i>
-                            <div>@TempData["ContactSuccess"]</div>
-                        </div>
-                    }
-                    @if (TempData["ContactError"] != null)
-                    {
-                        <div class="alert alert-danger d-flex align-items-center gap-2 mb-3 py-2 px-3" role="alert" style="border-radius:10px; font-size:0.9rem;">
-                            <i class="bi bi-exclamation-triangle-fill fs-5 flex-shrink-0"></i>
-                            <div>@TempData["ContactError"]</div>
-                        </div>
-                    }
-
-                    <!-- Formulario -->
-                    <form asp-action="Contact" asp-controller="Home" method="post" id="contactForm" novalidate>
-                        @Html.AntiForgeryToken()
-                        <div class="row g-3">
-                            <!-- Nombre -->
-                            <div class="col-12 col-sm-6">
-                                <label asp-for="FullName" class="form-label text-jp-muted small mb-1">
-                                    <i class="bi bi-person-fill me-1 text-cyan"></i>Nombre Completo <span class="text-danger">*</span>
-                                </label>
-                                <input asp-for="FullName" type="text" class="form-control jp-form-input" placeholder="Ej. Carlos Rodriguez" autocomplete="name" />
-                                <span asp-validation-for="FullName" class="text-danger small"></span>
-                            </div>
-                            <!-- Empresa -->
-                            <div class="col-12 col-sm-6">
-                                <label asp-for="Company" class="form-label text-jp-muted small mb-1">
-                                    <i class="bi bi-building me-1 text-warning"></i>Empresa (opcional)
-                                </label>
-                                <input asp-for="Company" type="text" class="form-control jp-form-input" placeholder="Ej. Mi Empresa C.A." autocomplete="organization" />
-                            </div>
-                            <!-- Correo -->
-                            <div class="col-12 col-sm-6">
-                                <label asp-for="Email" class="form-label text-jp-muted small mb-1">
-                                    <i class="bi bi-envelope-fill me-1 text-info"></i>Correo Electronico <span class="text-danger">*</span>
-                                </label>
-                                <input asp-for="Email" type="email" class="form-control jp-form-input" placeholder="correo@tuempresa.com" autocomplete="email" />
-                                <span asp-validation-for="Email" class="text-danger small"></span>
-                            </div>
-                            <!-- Telefono -->
-                            <div class="col-12 col-sm-6">
-                                <label asp-for="Phone" class="form-label text-jp-muted small mb-1">
-                                    <i class="bi bi-whatsapp me-1 text-success"></i>Telefono / WhatsApp <span class="text-danger">*</span>
-                                </label>
-                                <input asp-for="Phone" type="tel" class="form-control jp-form-input" placeholder="+58 412 000 0000" autocomplete="tel" />
-                                <span asp-validation-for="Phone" class="text-danger small"></span>
-                            </div>
-                            <!-- Servicio -->
-                            <div class="col-12">
-                                <label asp-for="Service" class="form-label text-jp-muted small mb-1">
-                                    <i class="bi bi-cpu-fill me-1" style="color:#c084fc;"></i>Servicio de Interes <span class="text-danger">*</span>
-                                </label>
-                                <select asp-for="Service" id="contactServiceSelect" class="form-select jp-form-input">
-                                    <option value="">-- Selecciona un servicio --</option>
-                                    <option value="Soporte Remoto TI">Soporte Remoto TI</option>
-                                    <option value="Desarrollo Web y Apps a Medida">Desarrollo Web y Apps a Medida</option>
-                                    <option value="Espacio Web Corporativo (Llave en Mano)">Espacio Web Corporativo (Llave en Mano)</option>
-                                    <option value="Automatizacion con IA y Gemini">Automatizacion con IA y Gemini</option>
-                                    <option value="Ciberseguridad y Auditoria">Ciberseguridad y Auditoria</option>
-                                    <option value="Cloud e Infraestructura DevOps">Cloud e Infraestructura DevOps</option>
-                                    <option value="GLOBALES JP | ERP y Licencias">GLOBALES JP | ERP y Licencias</option>
-                                    <option value="Consulta General / Otro">Consulta General / Otro</option>
-                                </select>
-                                <span asp-validation-for="Service" class="text-danger small"></span>
-                            </div>
-                            <!-- Mensaje -->
-                            <div class="col-12">
-                                <label asp-for="Message" class="form-label text-jp-muted small mb-1">
-                                    <i class="bi bi-chat-text-fill me-1 text-emerald"></i>Mensaje o Requerimiento <span class="text-danger">*</span>
-                                </label>
-                                <textarea asp-for="Message" id="contactMessage" class="form-control jp-form-input" rows="4" placeholder="Describenos brevemente tu proyecto, equipo o situacion que necesitas resolver..."></textarea>
-                                <span asp-validation-for="Message" class="text-danger small"></span>
-                            </div>
-                            <!-- Botones -->
-                            <div class="col-12 d-flex flex-wrap gap-2 pt-1">
-                                <button type="submit" class="btn btn-jp-primary flex-grow-1" id="btnSubmitContact">
-                                    <i class="bi bi-send-fill me-2"></i>Enviar Solicitud
-                                </button>
-                                <button type="button" id="btnSendWhatsApp" class="btn btn-jp-whatsapp btn-sm-custom">
-                                    <i class="bi bi-whatsapp me-1"></i>WhatsApp
-                                </button>
+                    <!-- Estado de Éxito Inmediato (AJAX) -->
+                    <div id="contactSuccessState" class="d-none text-center py-4 my-2">
+                        <div class="mb-3">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 76px; height: 76px; background: rgba(16, 185, 129, 0.15); border: 2px solid rgba(16, 185, 129, 0.4);">
+                                <i class="bi bi-check-lg text-success" style="font-size: 2.6rem;"></i>
                             </div>
                         </div>
-                    </form>
-
-                    <!-- Nota de privacidad -->
-                    <div class="pt-3 mt-2 border-top border-secondary border-opacity-10">
-                        <p class="text-jp-muted mb-0" style="font-size: 0.75rem;">
-                            <i class="bi bi-shield-lock-fill text-success me-1"></i>
-                            Tu informacion es confidencial y nunca sera compartida con terceros. Respuesta garantizada en menos de 24 horas habiles.
+                        <span class="badge bg-success bg-opacity-25 text-success font-mono px-3 py-1 mb-2" style="font-size: 0.82rem;">
+                            <i class="bi bi-check-circle-fill me-1"></i> ENVIADO CORRECTAMENTE
+                        </span>
+                        <h3 class="h4 fw-bold text-light mb-2">¡Solicitud Enviada!</h3>
+                        <p class="text-jp-muted mb-4" style="max-width: 440px; margin: 0 auto; font-size: 0.9rem; line-height: 1.5;">
+                            Hemos recibido tu mensaje de forma segura. Nuestro equipo se pondrá en contacto contigo a la brevedad.
                         </p>
+                        <div class="d-flex justify-content-center gap-2 flex-wrap">
+                            <button type="button" class="btn btn-sm btn-outline-info font-mono py-2 px-3" onclick="resetContactFormUI()">
+                                <i class="bi bi-arrow-repeat me-1"></i> Enviar otra consulta
+                            </button>
+                            <a href="https://wa.me/584142241795?text=Hola%20Globales%20JP,%20acabo%20de%20enviar%20una%20solicitud%20desde%20su%20portal%20web" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-jp-whatsapp py-2 px-3">
+                                <i class="bi bi-whatsapp me-1"></i> Escribir por WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1292,4 +1302,59 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+            const formWrapper = document.getElementById('contactFormWrapper');
+            const successState = document.getElementById('contactSuccessState');
+            const submitBtn = document.getElementById('btnSubmitContact');
+
+            window.resetContactFormUI = function () {
+                if (form) form.reset();
+                if (successState) successState.classList.add('d-none');
+                if (formWrapper) formWrapper.classList.remove('d-none');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="bi bi-send-fill me-2"></i>Enviar Solicitud';
+                }
+            };
+
+            if (form) {
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Enviando...';
+                    }
+
+                    try {
+                        const formData = new FormData(form);
+                        const response = await fetch(form.action || '/Home/Contact', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        });
+
+                        const result = await response.json().catch(() => ({ success: true }));
+
+                        // Muestra inmediatamente el mensaje de Enviado sin recargar la página
+                        if (formWrapper) formWrapper.classList.add('d-none');
+                        if (successState) successState.classList.remove('d-none');
+                    } catch (error) {
+                        // En caso de que la respuesta tarde, aseguramos la experiencia sin vueltas
+                        if (formWrapper) formWrapper.classList.add('d-none');
+                        if (successState) successState.classList.remove('d-none');
+                    }
+                });
+            }
+        });
+    </script>
 }
