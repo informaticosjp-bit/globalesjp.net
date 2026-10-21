@@ -116,3 +116,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 8000);
     }
 });
+
+// 5. Interactive Corporate Showcase Model Switcher
+window.switchCorporateModel = function (modelKey) {
+    const tabButtons = document.querySelectorAll('.model-tab-btn');
+    tabButtons.forEach(btn => {
+        if (btn.getAttribute('data-model') === modelKey) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    const panels = document.querySelectorAll('.corporate-models-container .model-panel');
+    panels.forEach(panel => {
+        panel.classList.add('d-none');
+        panel.classList.remove('active');
+    });
+
+    const targetPanel = document.getElementById(`model-panel-${modelKey}`);
+    if (targetPanel) {
+        targetPanel.classList.remove('d-none');
+        targetPanel.classList.add('active');
+    }
+};
+
