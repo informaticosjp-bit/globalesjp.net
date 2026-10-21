@@ -1333,23 +1333,50 @@
                         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Enviando...';
                     }
 
-                    try {
-                        const formData = new FormData(form);
-                        const response = await fetch(form.action || '/Home/Contact', {
-                            method: 'POST',
-                            body: formData,
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest'
-                            }
-                        });
+                    const fullName = form.querySelector('[name="FullName"]')?.value || '';
+                    const company = form.querySelector('[name="Company"]')?.value || 'No especificada';
+                    const email = form.querySelector('[name="Email"]')?.value || '';
+                    const phone = form.querySelector('[name="Phone"]')?.value || '';
+                    const service = form.querySelector('[name="Service"]')?.value || 'Consulta General';
+                    const message = form.querySelector('[name="Message"]')?.value || '';
 
-                        const result = await response.json().catch(() => ({ success: true }));
+                    const payload = {
+                        _subject: `[LEAD WEB GLOBALES JP] ${service} - ${fullName}`,
+                        _replyto: email,
+                        _captcha: "false",
+                        _template: "table",
+                        "Nombre del Cliente": fullName,
+                        "Empresa / Organización": company,
+                        "Correo Electrónico": email,
+                        "Teléfono / WhatsApp": phone,
+                        "Servicio de Interés": service,
+                        "Mensaje o Requerimiento": message
+                    };
+
+                    try {
+                        // 1. Envío directo por HTTPS (puerto 443) que evade cualquier bloqueo de puertos en la nube
+                        const fsPromise = fetch('https://formsubmit.co/ajax/informaticosjp@gmail.com', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                        }).catch(() => null);
+
+                        // 2. Registro simultáneo en backend ASP.NET
+                        const backendPromise = fetch(form.action || '/Home/Contact', {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                        }).catch(() => null);
+
+                        await Promise.allSettled([fsPromise, backendPromise]);
 
                         // Muestra inmediatamente el mensaje de Enviado sin recargar la página
                         if (formWrapper) formWrapper.classList.add('d-none');
                         if (successState) successState.classList.remove('d-none');
                     } catch (error) {
-                        // En caso de que la respuesta tarde, aseguramos la experiencia sin vueltas
                         if (formWrapper) formWrapper.classList.add('d-none');
                         if (successState) successState.classList.remove('d-none');
                     }
