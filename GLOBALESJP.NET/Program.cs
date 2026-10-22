@@ -44,6 +44,13 @@ if (app.Environment.IsDevelopment())
 app.UseRouting();
 app.UseAuthorization();
 
+// =========================================================================
+// Health Check / Keep-Alive para UptimeRobot y monitores externos
+// Responde 200 OK a peticiones GET y HEAD en "/" sin pasar por el pipeline MVC
+// =========================================================================
+app.MapMethods("/health", new[] { "GET", "HEAD" }, () => Results.Ok("OK"));
+app.MapMethods("/", new[] { "HEAD" }, () => Results.Ok());
+
 app.MapStaticAssets();
 
 // Ruta predeterminada dirigida a HomeController.Index
